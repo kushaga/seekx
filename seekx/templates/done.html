@@ -1,0 +1,62 @@
+{% load url from future %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+<h1>{{ user.username }}</h1>
+</head>
+<body>
+<style>
+.circle {
+  display: block;
+  width: 200px;
+  height: 200px;
+  align:right;
+  margin: 1em auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 99em;
+  -moz-border-radius: 99em;
+  border-radius: 99em;
+  border: 2px solid #db000b;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5);
+  
+}
+</style>  
+<br>
+<a href="/logout">Logout</a>
+<a href="/createevent/">Create Event</a>
+<br> <br>
+<a href="/profile/">Profile</a>
+<a href="/project/">Project</a>
+<a href="/movies/">Movies</a>
+<a href="/hangout/">Hangouts</a>
+<a href="/food/">Food</a>
+<a href="/competitions/">Competitions</a>
+<a href="/misc/">Misc</a>
+<a href="/sports/">Sports</a>
+<a href="/carpool/">Carpool</a>
+<br>
+<h1>Trending Posts</h1>
+<a href="/sports/">Sports</a>
+<a href="/carpool/">Carpool</a>
+
+<br>
+<!-- display profile photo using the user profile-->
+{% for x in event  %}
+  <td><div class="circle" style="background-image:url('/static/{{x.profilePhoto}}')"></div></td>
+    <td>Event closes at {{x.deadline}}</td>
+    <td><a href="/user/{{x.userid}}">{{x.username}}</a> seeks {{x.numpeople}} for {{x.eventtype}}</td>
+    <td>Description:{{x.description}}</td>
+    <td>{{x.email}}</td>
+    <td>{{x.eventname}}</td>
+    <!--<td><a href="/sendmail/">Respond</a></td>-->
+    <td>Respond</td>
+    <br><br>
+    {% endfor %}
+
+</body>
+</html>>

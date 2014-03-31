@@ -1,0 +1,57 @@
+{% load staticfiles %}
+{% load url from future %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+
+<div class=row>
+	<div class="col-lg-12">
+		  <div class="container-form2">
+      <legend>Item Details</legend>
+			<form action="" method="post">
+					
+					{% csrf_token %}
+					<div style="display:none"><h3>Username:    {{createevent_form.username}}</h3></div>
+					<div style="display:none"><h3><label>EmailId:</label>   {{createevent_form.email}}</h3></div>
+					<div style="display:none"><h3>{{createevent_form.pubdate}}</h3></div>
+					<div style="display:none"><h3>{{createevent_form.status}}</h3></div>
+					<div style="display:none"><h3>{{createevent_form.userid}}</h3></div>
+					<div style="display:none"><h3> {{createevent_form.profilePhoto}}</h3> </div>
+					<h3>   {{createevent_form.eventname}}</h3>
+					<h3>   {{createevent_form.eventtype}}</h3>
+					<h3>    {{createevent_form.description}}</h3>
+					<h3>    {{createevent_form.numpeople}}</h3>
+					<h3>Enter Event DeadLine</h3>
+					<h3>    {{createevent_form.deadline}}</h3>
+					<center><input type="submit" value="Submit"class="btn btn-primary"></center>
+				</form>
+		</div>
+	</div>
+</div>
+
+</body>
+</script>
+<link rel="stylesheet" type="text/css" href="{% static 'datetimepicker-master/jquery.datetimepicker.css' %}"/ >
+<script src="{% static 'datetimepicker-master/jquery.js' %}"></script>
+<script src="{% static 'datetimepicker-master/jquery.datetimepicker.js' %}"></script>
+
+<script>
+$('#id_deadline_1').datetimepicker({
+	datepicker:false,
+	format:'H:i'
+});
+</script>
+<script >
+$('#id_deadline_0').datetimepicker({
+	timepicker:false,
+	format:'Y-m-d'
+});
+</script>
+
+</html>
+

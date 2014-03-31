@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<table border="0";
+	width=100%;
+	cellspacing="10";
+	cellpadding="10";>
+	
+<style>
+.circle {
+  display: block;
+  width: 200px;
+  height: 200px;
+  align:right;
+  margin: 1em auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 99em;
+  -moz-border-radius: 99em;
+  border-radius: 99em;
+  border: 2px solid #db000b;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5);
+  
+}
+</style>	
+
+<tr>
+	<td>
+	<h3><b>{{user.firstname}} {{user.lastname}}</b></h3>
+	<b><pre>Email ID   :</b>	{{user.email}}</pre>
+	<b><pre>Hobbies    :</b>	{{user.hobbies}}</pre>
+	<b><pre>Courses      :</b>	{{user.courses}}</pre>
+	<td><div class="circle" style="background-image:url('/static/{{user.profilePhoto}}')"></div></td>
+ </tr>
+	</table>
+<a href="/updateprofile/">Profile</a>
+
+</body>
+</html>

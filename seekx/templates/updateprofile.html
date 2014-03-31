@@ -1,0 +1,35 @@
+{% load staticfiles %}
+{% load url from future %}
+
+<!DOCTYPE html>
+<html>
+<head>
+		<title>SIGNUP</title>
+<body>
+	<div class="signup">
+		{% block content %}
+		<form enctype='multipart/form-data' action="" method="post">
+			{% csrf_token %}
+			<div style="display:none"><h3>Username:    {{form1.username}}</h3></div>
+			<div style="display:none"><h3>{{form1.firstname}}</h3></div>
+			<div style="display:none"><h3><label>LastName:</label>{{form1.lastname}}</h3></div>
+			<div style="display:none"><h3><label>EmailId:</label>   {{form1.email}}</h3></div>
+			<div style="display:none"><h3><label>Points:</label>   {{form1.points}}</h3></div>
+			
+			<h3>Hobbies: {{form1.hobbies}}</h3>
+			<h3>Courses: {{form1.courses}}</h3>
+			<h3>Admission Year: {{form1.batch}}</h3>
+			<h3>Profile Pic: {{form1.profilePhoto}}</h3>
+			<div class="form-actions">
+			        <input class="btn btn-primary btn-large" type="submit" value="Submit"/>
+			        {% block extra_buttons %}
+			        {% endblock extra_buttons %}
+		        </div>	
+		</form>
+
+		{% endblock %}
+	</div>
+
+
+</body>
+</html> 
